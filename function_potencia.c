@@ -1,18 +1,15 @@
-#include <stdio.h>
-#include "function_potencia.c"
+#ifndef FUNCTION_POTENCIA_C
+#define FUNCTION_POTENCIA_C
 
-int main() {
-    int base, expoente;
+// Calcula base^expoente usando multiplicacao (sem usar operador de potencia)
+long long potencia(int base, int expoente) {
+    if (expoente == 0) return 1;
 
-    printf("Digite a base: ");
-    scanf("%d", &base);
-
-    printf("Digite o expoente: ");
-    scanf("%d", &expoente);
-
-    long long resultado = potencia(base, expoente);
-    printf("%d^%d = %lld\n", base, expoente, resultado);
-
-    printf("Criado por Luis Guilherme");
-    return 0;
+    long long resultado = 1;
+    for (int i = 0; i < expoente; i++) {
+        resultado *= base;
+    }
+    return resultado;
 }
+
+#endif
