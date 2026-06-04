@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include "function_potencia.c"
+#include <assert.h>
 
-int main() {
-    printf("Testando potencia:\n");
+int potencia(int base, int expoente);
 
-    printf("2^2 = %lld\n", potencia(2, 2));   // Esperado: 4
-    printf("3^3 = %lld\n", potencia(3, 3));   // Esperado: 27
-    printf("4^4 = %lld\n", potencia(4, 4));   // Esperado: 256
-    printf("5^5 = %lld\n", potencia(5, 5));   // Esperado: 3125
+int main()
+{
 
-    printf("Criado por Luís Guilherme");
+    assert(potencia(2,2) == 4);
+    assert(potencia(3,3) == 27);
+    assert(potencia(4,4) == 256);
+    assert(potencia(5,5) == 3125);
+
+    printf("Todos os testes passaram!\n");
+
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
