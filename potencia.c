@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include "function_potencia.c"
 
-int main() {
+int potencia(int base, int expoente);
+
+int main()
+{
+
     int base, expoente;
 
-    printf("Digite a base: ");
+    printf("Base: ");
     scanf("%d", &base);
 
-    printf("Digite o expoente: ");
+    printf("Expoente: ");
     scanf("%d", &expoente);
 
-    long long resultado = potencia(base, expoente);
-    printf("%d^%d = %lld\n", base, expoente, resultado);
+    printf("Resultado = %d\n", potencia(base, expoente));
 
-    printf("Criado por Luis Guilherme");
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
